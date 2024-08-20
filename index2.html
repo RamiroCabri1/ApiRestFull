@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='es-AR'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Ejemplo 1 </title>
+    </head>
+    
+    <body>
+        <form>
+            <label for="in-nombre"> Nombre: </label>
+            <input type="text" id="in-nombre" required> 
+
+            <label for="in-apellido"> Apellido: </label>
+            <input type="text" id="in-apellido" required> 
+
+            <label for="in-dni"> DNI: </label>
+            <input type="number" id="in-dni" required maxlength="8" minlength="7"> 
+
+            <label for="in-email"> Email: </label>
+            <input type="email" id="in-email" required> 
+
+            <button onclick="create()"> Crear </button>
+            <button> Leer </button>
+            <button onclick="update()"> Editar </button>
+            <button> Eliminar </button>
+        </form>
+    </body>    
+
+    <script>
+        function getData(){
+            // Recupera los datos del formulario
+            const name = document.getElementById("in-nombre").value;
+            const surname = document.getElementById("in-apellido").value;
+            const dni = document.getElementById("in-dni").value;
+            const email = document.getElementById("in-email").value;
+
+            const data = {
+                name: name,
+                surname: surname,
+                dni: dni,
+                email: email
+            }
+            return data
+        }
+
+        function create(){            
+            const data = getData();
+            // enviar los datos mediante la API fecth
+            fetch( POST, ... , data);
+        }
+
+        function update(){
+            const data = getData();
+            fetch(UPDATE, ..., data);
+        }
+    </script>
+
+
+</html>
