@@ -3,29 +3,87 @@
     <head>
         <meta charset='utf-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="/Proyecto2023/js/fullstack.js" ></script>
+        <script src="js/fullstack.js" ></script>
+        <link rel="stylesheet" href="styles/styles.css">
         <title> Ejemplo 1 </title>
     </head>
     
     <body>
-        <form>
-            <label for="in-nombre"> Nombre: </label>
-            <input type="text" id="in-nombre" required> 
 
-            <label for="in-apellido"> Apellido: </label>
-            <input type="text" id="in-apellido" required> 
+        <header></header>
+        <nav></nav>
+        <main>
+            <section>
 
-            <label for="in-dni"> DNI: </label>
-            <input type="number" id="in-dni" required maxlength="8" minlength="7"> 
+                <header>  
+                    <h1>Pagina de prueba API</h1>
+                    <p> Estado: 
+                        <span id="status"> --- </span>
+                        <span class="load">  </span>
+                    </p>
+                    <button onclick="getAll()">GET ALL</button>
+                </header>
+                
 
-            <label for="in-email"> Email: </label>
-            <input type="email" id="in-email" required> 
+            </section>
 
-            <button onclick="create()"> Crear </button>
-            <button> Leer </button>
-            <button onclick="update()"> Editar </button>
-            <button> Eliminar </button>
-        </form>
+            <hr>
+
+            <section>
+                 
+                <h2>Lista de Personas</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Id
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Apellido
+                            </th>
+                            <th>
+                                DNI
+                            </th>
+                            <th>
+                                Acciones
+                            </th>
+
+                        </tr>
+                        <tbody id="all-persons">
+                           
+                        </tbody>
+                    </thead>
+                </table>
+
+
+
+            </section>
+            <hr>
+            <form>
+                <label for="in-nombre"> Nombre: </label>
+                <input type="text" id="in-nombre" required> 
+    
+                <label for="in-apellido"> Apellido: </label>
+                <input type="text" id="in-apellido" required> 
+    
+                <label for="in-dni"> DNI: </label>
+                <input type="number" id="in-dni" required maxlength="8" minlength="7"> 
+    
+                <label for="in-email"> Email: </label>
+                <input type="email" id="in-email" required> 
+    
+                <button onclick="create()"> Crear </button>
+                <button> Leer </button>
+                <button onclick="update()"> Editar </button>
+                <button> Eliminar </button>
+            </form>
+        </main>
+
+        
     </body>    
 
     <script>

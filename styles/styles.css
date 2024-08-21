@@ -1,0 +1,51 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+table, th , td {
+
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 13px 10px;
+
+}
+
+.load {
+
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: none;
+}
+
+.loadiing {
+
+    display: inline-block;
+    border: 5px solid red;
+    border-top:  5px solid blue;
+    animation-name: rot;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.editing {
+
+    border-color: chocolate;
+    background-color: rgb(191, 197, 197);
+    color: chartreuse;
+
+}
+
+@keyframes rot {
+
+    from {
+
+        transform: rotate(0);
+    }
+    to {
+
+        transform: rotate(360);
+    }
+}
